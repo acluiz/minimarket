@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "name": "minimarket",
+  "version": "1.0.0",
+  "description": "This project is a fictional minimarket system developed exclusively for college classes. It is intended for educational purposes only and is not meant for real-world commercial use.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
