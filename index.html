@@ -19,28 +19,6 @@
     <link rel="import" href="./components/header/index.html" />
   </head>
   <body>
-    <!-- <header>
-      <h1>Minimercado PUCRS</h1>
-
-      <nav>
-        <ul>
-          <li>
-            <a href="#servicos">Serviços</a>
-          </li>
-          <li>
-            <a href="#frutas-verduras">Frutas e verduras</a>
-          </li>
-          <li>
-            <a href="#alimenticios-nao-pereciveis"
-              >Alimentícios não perecíveis</a
-            >
-          </li>
-          <li>
-            <a href="#higiene-limpeza">Higiene e limpeza</a>
-          </li>
-        </ul>
-      </nav>
-    </header> -->
     <main id="layout"></main>
 
     <section id="servicos">
@@ -128,44 +106,14 @@
       </div>
     </section>
 
-    <hr />
+    <script type="module">
+      import { Header } from "./components/header.js";
+      import { Footer } from "./components/footer.js";
 
-    <footer>
-      <p>&copy; Desenvolvido por Ana Luiz</p>
+      const layout = document.getElementById("layout");
 
-      <div>
-        <h3>Contato</h3>
-
-        <p>Telefone: <a href="tel:+0000000000" target="_blank">0000-0000</a></p>
-        <p>
-          Email:
-          <a href="mailto:minimercado@pucrs.com.br" target="_blank"
-            >minimercado@pucrs.com.br</a
-          >
-        </p>
-      </div>
-
-      <div>
-        <h3>Navegue</h3>
-        <nav>
-          <ul>
-            <li>
-              <a href="#servicos">Serviços</a>
-            </li>
-            <li>
-              <a href="#frutas-verduras">Frutas e verduras</a>
-            </li>
-            <li>
-              <a href="#alimenticios-nao-pereciveis"
-                >Alimentícios não perecíveis</a
-              >
-            </li>
-            <li>
-              <a href="#higiene-limpeza">Higiene e limpeza</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </footer>
+      layout.appendChild(Header());
+      layout.appendChild(Footer());
+    </script>
   </body>
 </html>
