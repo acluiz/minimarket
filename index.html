@@ -30,89 +30,45 @@
       </p>
     </section>
 
-    <section id="frutas-verduras">
-      <h2>Frutas e verduras</h2>
-
-      <div>
-        <img
-          width="auto"
-          height="200"
-          alt="Banana prata"
-          src="./img/banana.jpg"
-        />
-        <p><b>Banana prata</b></p>
-        <p>R$ 3,49/kg</p>
-      </div>
-      <div>
-        <img
-          width="auto"
-          height="200"
-          alt="Couve crespa"
-          src="./img/vegetables.jpg"
-        />
-        <p><b>Couve crespa</b></p>
-        <p>R$ 2,00</p>
-      </div>
-    </section>
-
-    <section id="alimenticios-nao-pereciveis">
-      <h2>Alimentícios não perecíveis</h2>
-
-      <div>
-        <img
-          width="auto"
-          height="200"
-          alt="arroz branco em pacote 1kg"
-          src="./img/rice.jpg"
-        />
-        <p><b>Arroz branco em pacote 1kg</b></p>
-        <p>R$ 7,49</p>
-      </div>
-
-      <div>
-        <img
-          width="auto"
-          height="200"
-          alt="Feijão branco em pacote 1kg"
-          src="./img/beans.jpg"
-        />
-        <p><b>Feijão branco em pacote 1kg</b></p>
-        <p>R$ 6,29</p>
-      </div>
-    </section>
-
-    <section id="higiene-limpeza">
-      <h2>Higiene e limpeza</h2>
-
-      <div>
-        <img
-          width="auto"
-          height="200"
-          alt="papel higiênico folha dupla com 12 rolos"
-          src="./img/toilet-paper.jpg"
-        />
-        <p><b>Papel higiênico folha dupla com 12 rolos</b></p>
-        <p>R$ 16,30</p>
-      </div>
-      <div>
-        <img
-          width="auto"
-          height="200"
-          alt="Sabonete líquido 400ml"
-          src="./img/soap.jpg"
-        />
-        <p><b>Sabonete líquido 400ml</b></p>
-        <p>R$ 8,99</p>
-      </div>
-    </section>
-
     <script type="module">
       import { Header } from "./components/header.js";
       import { Footer } from "./components/footer.js";
+      import { Products } from "./components/products.js";
+
+      import {
+        fruits_vegetables,
+        foods,
+        cleaning,
+      } from "./constants/products.js";
 
       const layout = document.getElementById("layout");
 
       layout.appendChild(Header());
+
+      layout.appendChild(
+        Products({
+          id: "frutas-verduras",
+          title: "Frutas e verduras",
+          products: fruits_vegetables,
+        })
+      );
+
+      layout.appendChild(
+        Products({
+          id: "alimenticios-nao-pereciveis",
+          title: "Alimentícios não perecíveis",
+          products: foods,
+        })
+      );
+
+      layout.appendChild(
+        Products({
+          id: "higiene-limpeza",
+          title: "Higiene e limpeza",
+          products: cleaning,
+        })
+      );
+
       layout.appendChild(Footer());
     </script>
   </body>

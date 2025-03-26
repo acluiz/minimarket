@@ -78,7 +78,7 @@ export const Footer = () => {
   const footerEl = document.createElement("footer");
 
   footerEl.classList.add(
-    "d-flex",
+    "d-md-flex",
     "justify-content-between",
     "bg-primary",
     "px-4",
