@@ -1,6 +1,4 @@
-export const Navigation = () => {
-  const navigation = document.createElement("nav");
-
+export const Header = () => {
   const links = [
     { url: "#servicos", label: "Serviços" },
     { url: "#frutas-verduras", label: "Frutas e verduras" },
@@ -11,49 +9,22 @@ export const Navigation = () => {
     { url: "#higiene-limpeza", label: "Higiene e limpeza" },
   ];
 
-  const navigationList = document.createElement("ul");
-  navigationList.classList.add("navbar-nav");
-
-  links.map(({ url, label }) => {
-    const navigationListItem = document.createElement("li");
-    const navigationLink = document.createElement("a");
-
-    navigationListItem.classList.add("nav-item");
-    navigationLink.classList.add("nav-link", "text-light");
-
-    navigationLink.href = url;
-    navigationLink.innerText = label;
-
-    navigationListItem.appendChild(navigationLink);
-    navigationList.appendChild(navigationListItem);
-  });
-
-  navigation.appendChild(navigationList);
-
-  return navigation;
-};
-
-export const Header = () => {
-  const headerEl = document.createElement("header");
-
-  headerEl.classList.add(
-    "navbar",
-    "navbar-expand-lg",
-    "justify-content-between",
-    "shadow-sm",
-    "bg-primary",
-    "py-3",
-    "px-4"
-  );
-
-  const title = document.createElement("h1");
-  title.innerText = "Minimercado PUCRS";
-  title.classList.add("navbar-brand", "text-light");
-
-  const navigation = Navigation();
-
-  headerEl.appendChild(title);
-  headerEl.appendChild(navigation);
-
-  return headerEl;
+  return `
+     <header class="navbar navbar-expand-lg justify-content-between shadow-sm bg-primary py-3 px-4">
+      <h1 class="navbar-brand text-light">Minimercado PUCRS</h1>
+      <nav>
+        <ul class="navbar-nav">
+          ${links
+            .map(
+              ({ url, label }) => `
+            <li class="nav-item">
+              <a class="nav-link text-light" href="${url}">${label}</a>
+            </li>
+          `
+            )
+            .join("")}
+        </ul>
+      </nav>
+    </header>
+  `;
 };

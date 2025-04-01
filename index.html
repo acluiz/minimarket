@@ -21,18 +21,11 @@
   <body>
     <main id="layout"></main>
 
-    <section id="servicos">
-      <h2>Serviços</h2>
-      <p>
-        <b>Retire o seu produto no local gratuitamente</b> ou solicite uma
-        <b>tele-entrega</b> por <b>R$ 4,00</b> através do número
-        <a href="tel:+0000000000" target="_blank">0000-0000</a>.
-      </p>
-    </section>
-
     <script type="module">
       import { Header } from "./components/header.js";
       import { Footer } from "./components/footer.js";
+      import { Hero, HeroAnimation } from "./components/hero.js";
+      import { Services } from "./components/services.js";
       import { Products } from "./components/products.js";
 
       import {
@@ -43,33 +36,31 @@
 
       const layout = document.getElementById("layout");
 
-      layout.appendChild(Header());
-
-      layout.appendChild(
-        Products({
+      layout.innerHTML = `
+        ${Header()}
+        ${Hero()}
+        ${Services()}
+        ${Products({
           id: "frutas-verduras",
           title: "Frutas e verduras",
           products: fruits_vegetables,
-        })
-      );
+        })}
 
-      layout.appendChild(
-        Products({
+        ${Products({
           id: "alimenticios-nao-pereciveis",
           title: "Alimentícios não perecíveis",
           products: foods,
-        })
-      );
+        })}
 
-      layout.appendChild(
-        Products({
+        ${Products({
           id: "higiene-limpeza",
           title: "Higiene e limpeza",
           products: cleaning,
-        })
-      );
+        })}
+        ${Footer()}
+      `;
 
-      layout.appendChild(Footer());
+      HeroAnimation();
     </script>
   </body>
 </html>
