@@ -10,7 +10,7 @@ const slides = [
   },
 ];
 
-export const HeroAnimation = () => {
+export const heroAnimation = () => {
   let activeSlideIndex = 0;
 
   const slidesEl = document.querySelectorAll(".carousel-item");

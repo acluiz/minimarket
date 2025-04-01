@@ -1,12 +1,12 @@
 export const Header = () => {
   const links = [
-    { url: "#servicos", label: "Serviços" },
     { url: "#frutas-verduras", label: "Frutas e verduras" },
     {
       url: "#alimenticios-nao-pereciveis",
       label: "Alimentícios não perecíveis",
     },
     { url: "#higiene-limpeza", label: "Higiene e limpeza" },
+    { url: "#servicos", label: "Serviços" },
   ];
 
   return `

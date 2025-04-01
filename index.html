@@ -24,9 +24,10 @@
     <script type="module">
       import { Header } from "./components/header.js";
       import { Footer } from "./components/footer.js";
-      import { Hero, HeroAnimation } from "./components/hero.js";
+      import { Hero, heroAnimation } from "./components/hero.js";
       import { Services } from "./components/services.js";
       import { Products } from "./components/products.js";
+      import { onSendForms } from "./components/form.js";
 
       import {
         fruits_vegetables,
@@ -39,28 +40,31 @@
       layout.innerHTML = `
         ${Header()}
         ${Hero()}
-        ${Services()}
+        
         ${Products({
           id: "frutas-verduras",
           title: "Frutas e verduras",
           products: fruits_vegetables,
         })}
-
+        
         ${Products({
           id: "alimenticios-nao-pereciveis",
           title: "Alimentícios não perecíveis",
           products: foods,
         })}
-
+        
         ${Products({
           id: "higiene-limpeza",
           title: "Higiene e limpeza",
           products: cleaning,
         })}
+
+        ${Services()}
         ${Footer()}
       `;
 
-      HeroAnimation();
+      heroAnimation();
+      onSendForms();
     </script>
   </body>
 </html>
